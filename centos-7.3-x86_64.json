@@ -174,6 +174,19 @@
         "scripts/common/metadata.sh",
         "scripts/common/sshd.sh",
         "scripts/centos/networking.sh",
+        "scripts/centos/provision-client.sh"
+      ],
+      "type": "shell"
+    },
+    {
+      "environment_vars": [
+        "HOME_DIR=/home/vagrant",
+        "http_proxy={{user `http_proxy`}}",
+        "https_proxy={{user `https_proxy`}}",
+        "no_proxy={{user `no_proxy`}}"
+      ],
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "scripts": [
         "scripts/common/vagrant.sh",
         "scripts/common/virtualbox.sh",
         "scripts/common/vmware.sh",
@@ -181,13 +194,14 @@
         "scripts/centos/cleanup.sh",
         "scripts/common/minimize.sh"
       ],
+      "pause_before": "30s",
       "type": "shell"
     }
   ],
   "variables": {
     "box_basename": "centos-7.3",
     "build_timestamp": "{{isotime \"20060102150405\"}}",
-    "cpus": "1",
+    "cpus": "3",
     "disk_size": "40960",
     "git_revision": "__unknown_git_revision__",
     "headless": "",
@@ -199,7 +213,7 @@
     "iso_checksum_type": "sha256",
     "iso_name": "CentOS-7-x86_64-DVD-1611.iso",
     "ks_path": "centos-7.3/ks.cfg",
-    "memory": "1024",
+    "memory": "2048",
     "metadata": "floppy/dummy_metadata.json",
     "mirror": "http://mirrors.kernel.org/centos",
     "mirror_directory": "7.3.1611/isos/x86_64",
