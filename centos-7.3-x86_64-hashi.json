@@ -118,7 +118,7 @@
   "variables": {
     "box_basename": "centos-7.3",
     "build_timestamp": "{{isotime \"20060102150405\"}}",
-    "cpus": "3",
+    "cpus": "1",
     "disk_size": "40960",
     "git_revision": "__unknown_git_revision__",
     "headless": "",
@@ -130,7 +130,7 @@
     "iso_checksum_type": "sha256",
     "iso_name": "CentOS-7-x86_64-DVD-1611.iso",
     "ks_path": "centos-7.3/ks.cfg",
-    "memory": "2048",
+    "memory": "1024",
     "metadata": "floppy/dummy_metadata.json",
     "mirror": "http://mirrors.kernel.org/centos",
     "mirror_directory": "7.3.1611/isos/x86_64",
