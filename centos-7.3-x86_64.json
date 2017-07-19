@@ -156,14 +156,10 @@
       "type": "vagrant"
     },
     {
-      "type": "atlas",
-      "only": ["hyperv-iso"],
-      "artifact": "alpine-digital-research/bookish-robot",
-      "artifact_type": "vagrant.box",
-      "metadata": {
-        "provider": "vmware_desktop",
-        "version": "0.{{ user `build_timestamp` }}"
-      }
+      "type": "vagrant-cloud",
+      "box_tag": "alpine-digital-research/bookish-robot",
+      "version": "0.{{ user `build_timestamp` }}",
+      "access_token": "{{ user `access_token` }}"
     }
   ],
   "provisioners": [
