@@ -68,16 +68,18 @@
     }
   ],
   "post-processors": [
-    {
-      "output": "builds/{{user `box_basename`}}.{{.Provider}}.box",
-      "type": "vagrant"
-    },
-    {
-      "type": "vagrant-cloud",
-      "box_tag": "alpine-digital-research/bookish-robot",
-      "version": "0.{{ user `build_timestamp` }}",
-      "access_token": "{{ user `access_token` }}"
-    }
+    [
+      {
+        "output": "builds/{{user `box_basename`}}.{{.Provider}}.box",
+        "type": "vagrant"
+      },
+      {
+        "type": "vagrant-cloud",
+        "box_tag": "alpine-digital-research/bookish-robot",
+        "version": "0.{{ user `build_timestamp` }}",
+        "access_token": "{{ user `access_token` }}"
+      }
+    ]
   ],
   "provisioners": [
     {
