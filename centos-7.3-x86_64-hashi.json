@@ -73,24 +73,10 @@
       "type": "vagrant"
     },
     {
-      "type": "atlas",
-      "only": ["vmware-iso"],
-      "artifact": "alpine-digital-research/bookish-robot",
-      "artifact_type": "vagrant.box",
-      "metadata": {
-        "provider": "vmware_desktop",
-        "version": "0.{{ user `build_timestamp` }}"
-      }
-    },
-    {
-      "type": "atlas",
-      "only": ["virtualbox-iso"],
-      "artifact": "alpine-digital-research/bookish-robot",
-      "artifact_type": "vagrant.box",
-      "metadata": {
-        "provider": "virtualbox",
-        "version": "0.{{ user `build_timestamp` }}"
-      }
+      "type": "vagrant-cloud",
+      "box_tag": "alpine-digital-research/bookish-robot",
+      "version": "0.{{ user `build_timestamp` }}",
+      "access_token": "{{ user `access_token` }}"
     }
   ],
   "provisioners": [
@@ -157,7 +143,7 @@
     "name": "centos-7.3",
     "no_proxy": "{{env `no_proxy`}}",
     "template": "centos-7.3-x86_64",
-    "version": "{{ env `ATLAS_BUILD_NUMBER` }}"
+    "version": "TIMESTAMP"
   }
 }
 
